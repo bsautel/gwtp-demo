@@ -3,6 +3,6 @@ target
 .project
 .settings/
 bin
-gwt-unitCache/
+gwt-unitCache
 war/datetime
-
+war/WEB-INF/deploy

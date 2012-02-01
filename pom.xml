@@ -29,19 +29,9 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>gwt-maven-plugin</artifactId>
 				<version>${gwt.plugin.version}</version>
-				<executions>
-<!-- 					<execution> -->
-<!-- 						<goals> -->
-<!-- 							<goal>resources</goal> -->
-<!-- 							<goal>compile</goal> -->
-<!-- 							<goal>test</goal> -->
-<!-- 						</goals> -->
-<!-- 					</execution> -->
-				</executions>
 				<configuration>
 					<webappDirectory>war</webappDirectory>
 					<noServer>true</noServer>
-					<runTarget>${antidot.gwt.oophm.url}</runTarget>
 					<testTimeOut>120</testTimeOut>
 					<localWorkers>2</localWorkers>
 				</configuration>
