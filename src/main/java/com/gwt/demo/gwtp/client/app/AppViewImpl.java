@@ -1,6 +1,5 @@
 package com.gwt.demo.gwtp.client.app;
 
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -9,63 +8,46 @@ import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.Widget;
 import com.gwtplatform.mvp.client.ViewImpl;
 
+public class AppViewImpl extends ViewImpl implements AppView {
+	protected interface Binder extends UiBinder<HTMLPanel, AppViewImpl> {
+	}
 
-public class AppViewImpl
-    extends ViewImpl
-    implements AppView
-{
-    protected interface Binder
-        extends UiBinder<HTMLPanel, AppViewImpl>
-    {
-    }
+	private static Binder binder = GWT.create(Binder.class);
+	private HTMLPanel panel;
 
+	@UiField
+	protected SimplePanel mainPanel, headerPanel, footerPanel;
 
-    private static Binder binder = GWT.create(Binder.class);
-    private HTMLPanel panel;
+	public AppViewImpl() {
+		panel = binder.createAndBindUi(this);
+	}
 
-    @UiField
-    protected SimplePanel mainPanel, helloPanel;
+	@Override
+	public Widget asWidget() {
+		return panel;
+	}
 
+	@Override
+	public void addToSlot(Object slot, Widget content) {
+		if (slot == AppPresenter.HEADER_SLOT) {
+			headerPanel.setWidget(content);
+		} else if (slot == AppPresenter.MAIN_SLOT) {
+			mainPanel.setWidget(content);
+		} else {
+			super.addToSlot(slot, content);
+		}
+	}
 
-    public AppViewImpl()
-    {
-        panel = binder.createAndBindUi(this);
-    }
-
-
-    @Override
-    public Widget asWidget()
-    {
-        return panel;
-    }
-
-
-    @Override
-    public void addToSlot(Object slot, Widget content)
-    {
-        if (slot == AppPresenter.helloSlot) {
-            helloPanel.setWidget(content);
-        }
-        else if (slot == AppPresenter.mainSlot) {
-            mainPanel.setWidget(content);
-        }
-        else {
-            super.addToSlot(slot, content);
-        }
-    }
-
-
-    @Override
-    public void setInSlot(Object slot, Widget content)
-    {
-        if (slot == AppPresenter.helloSlot) {
-            helloPanel.setWidget(content);
-        }
-        else if (slot == AppPresenter.mainSlot) {
-            mainPanel.setWidget(content);
-        }
-        else {
-            super.setInSlot(slot, content);
-        }
-    }
+	@Override
+	public void setInSlot(Object slot, Widget content) {
+		if (slot == AppPresenter.HEADER_SLOT) {
+			headerPanel.setWidget(content);
+		} else if (slot == AppPresenter.FOOTER_SLOT) {
+			footerPanel.setWidget(content);
+		} else if (slot == AppPresenter.MAIN_SLOT) {
+			mainPanel.setWidget(content);
+		} else {
+			super.setInSlot(slot, content);
+		}
+	}
 }

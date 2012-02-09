@@ -8,9 +8,12 @@ import com.gwt.demo.gwtp.client.date.DatePresenter;
 import com.gwt.demo.gwtp.client.date.DatePresenter.DateProxy;
 import com.gwt.demo.gwtp.client.date.DateView;
 import com.gwt.demo.gwtp.client.date.DateViewImpl;
-import com.gwt.demo.gwtp.client.hello.HelloPresenter;
-import com.gwt.demo.gwtp.client.hello.HelloView;
-import com.gwt.demo.gwtp.client.hello.HelloViewImpl;
+import com.gwt.demo.gwtp.client.footer.FooterPresenter;
+import com.gwt.demo.gwtp.client.footer.FooterView;
+import com.gwt.demo.gwtp.client.footer.FooterViewImpl;
+import com.gwt.demo.gwtp.client.header.HeaderPresenter;
+import com.gwt.demo.gwtp.client.header.HeaderView;
+import com.gwt.demo.gwtp.client.header.HeaderViewImpl;
 import com.gwt.demo.gwtp.client.time.TimePresenter;
 import com.gwt.demo.gwtp.client.time.TimePresenter.TimeProxy;
 import com.gwt.demo.gwtp.client.time.TimeView;
@@ -31,7 +34,10 @@ public class ModuleConfig extends AbstractPresenterModule {
 		bindPresenter(DatePresenter.class, DateView.class, DateViewImpl.class,
 				DateProxy.class);
 
-		bindSingletonPresenterWidget(HelloPresenter.class, HelloView.class,
-				HelloViewImpl.class);
+		bindSingletonPresenterWidget(HeaderPresenter.class, HeaderView.class,
+				HeaderViewImpl.class);
+
+		bindSingletonPresenterWidget(FooterPresenter.class, FooterView.class,
+				FooterViewImpl.class);
 	}
 }

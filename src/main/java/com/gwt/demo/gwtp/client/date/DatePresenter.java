@@ -48,7 +48,7 @@ public class DatePresenter
     @Override
     protected void revealInParent()
     {
-        RevealContentEvent.fire(appPresenter, AppPresenter.mainSlot, this);
+        RevealContentEvent.fire(appPresenter, AppPresenter.MAIN_SLOT, this);
     }
 
 

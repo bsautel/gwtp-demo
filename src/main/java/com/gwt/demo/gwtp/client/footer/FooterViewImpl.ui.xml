@@ -1,0 +1,43 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+	<ui:style>
+		.madeWithGwt {
+			position: absolute;
+			bottom: 30px;
+			right: 20px;
+			-moz-transform: rotate(-10deg);
+			-webkit-transform: rotate(-10deg);
+			-o-transform: rotate(-10deg);
+			-ms-transform: rotate(-10deg);
+		}
+		
+		.madeWithGwt h4 {
+			display: inline;
+			color: #ffffff;
+			font-size: 30px;
+			font-family: 'Kaushan Script', cursive;
+			text-shadow: -5px 0 #aac495, 0 5px #aac495, 5px 0 #aac495, 0 -5px
+				#aac495;
+		}
+		
+		.madeWithGwt h4,.madeWithGwt img {
+			vertical-align: middle;
+		}
+		
+		.madeWithGwt img {
+			margin-left: 10px;
+			width: 64px;
+		}
+		
+		.gwtLogo {
+			
+		}
+	</ui:style>
+	<g:HTMLPanel>
+		<div class="{style.madeWithGwt}">
+			<h4>Made with GWT</h4>
+			<img src="http://upload.wikimedia.org/wikipedia/en/f/f6/Gwt-logo.png"
+				alt="GWT Logo" class="{style.gwtLogo}" />
+		</div>
+	</g:HTMLPanel>
+</ui:UiBinder>
