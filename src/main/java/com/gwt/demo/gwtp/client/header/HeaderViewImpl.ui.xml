@@ -1,7 +1,7 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
 	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 	<ui:style>
-		.helloPanel {
+		.headerPanel {
 			background-color: #fff6de;
 			border: 3px solid #e8a400;
 			-webkit-border-radius: 15px;
@@ -11,14 +11,14 @@
 			width: 500px;
 		}
 		
-		.helloPanel h1 {
+		.headerPanel h1 {
 			color: #e8a400;
 			font-family: 'Exo', sans-serif;
 			text-align: center;
 		}
 	</ui:style>
 	<g:HTMLPanel>
-		<div class="{style.helloPanel}">
+		<div class="{style.headerPanel}">
 			<h1>Welcome on GWTP demo page!</h1>
 		</div>
 	</g:HTMLPanel>
