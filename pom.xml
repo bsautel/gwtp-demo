@@ -1,7 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.gwt.demo</groupId>
+	<artifactId>gwtp</artifactId>
+	<name>gwtp-demo-project</name>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<build>
 		<plugins>
 			<plugin>
@@ -34,6 +38,13 @@
 					<noServer>true</noServer>
 					<testTimeOut>120</testTimeOut>
 					<localWorkers>2</localWorkers>
+				</configuration>
+			</plugin>
+			<plugin>            
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<webXml>war/WEB-INF/web.xml</webXml>        
 				</configuration>
 			</plugin>
 		</plugins>
@@ -92,6 +103,4 @@
 		<gwt.plugin.version>2.4.0</gwt.plugin.version>
 		<gwt.test.mode>htmlunit</gwt.test.mode>
 	</properties>
-	<groupId>com.gwt-demo</groupId>
-	<artifactId>gwtp-demo</artifactId>
 </project>
