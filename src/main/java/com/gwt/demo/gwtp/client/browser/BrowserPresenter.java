@@ -30,7 +30,7 @@ public class BrowserPresenter extends Presenter<BrowserView, BrowserProxy> {
 	@Override
 	public void prepareFromRequest(PlaceRequest request) {
 		super.prepareFromRequest(request);
-		getView().displayUrl("http://www.google.fr");
+		getView().displayUrl("http://fr.wikipedia.org");
 	}
 
 	@Override
