@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='gwtpdemo'>
+	<inherits name='com.google.gwt.user.User' />
+
+	<inherits name='com.gwtplatform.mvp.Mvp' />
+
+	<define-configuration-property name="gin.ginjector"
+		is-multi-valued="false" />
+	<set-configuration-property name="gin.ginjector"
+		value="com.gwt.demo.gwtp.client.ModuleGinjector" />
+
+	<entry-point class='com.gwt.demo.gwtp.client.GWTPDemoModule' />
+
+	<source path='client' />
+</module>

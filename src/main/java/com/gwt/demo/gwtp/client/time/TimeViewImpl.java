@@ -1,6 +1,5 @@
 package com.gwt.demo.gwtp.client.time;
 
-
 import java.util.Date;
 
 import com.google.gwt.core.client.GWT;
@@ -16,66 +15,49 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.gwtplatform.mvp.client.ViewImpl;
 
+public class TimeViewImpl extends ViewImpl implements TimeView {
+	protected interface Binder extends UiBinder<FlowPanel, TimeViewImpl> {
+	}
 
-public class TimeViewImpl
-    extends ViewImpl
-    implements TimeView
-{
-    protected interface Binder
-        extends UiBinder<FlowPanel, TimeViewImpl>
-    {
-    }
+	FlowPanel panel;
 
+	@UiField
+	HTML html;
+	@UiField
+	Anchor link;
 
-    FlowPanel panel;
+	protected static final Binder binder = GWT.create(Binder.class);
 
-    @UiField
-    HTML html;
-    @UiField
-    Anchor link;
+	private TimePresenter timePresenter;
 
-    protected static final Binder binder = GWT.create(Binder.class);
+	@Inject
+	@SuppressWarnings("deprecation")
+	public TimeViewImpl() {
+		panel = binder.createAndBindUi(this);
 
-    private TimePresenter timePresenter;
+		Date dt = new Date();
 
+		SafeHtmlBuilder builder = new SafeHtmlBuilder();
+		builder.appendHtmlConstant("<h1>");
+		builder.appendEscaped(dt.getHours() + ":" + dt.getMinutes() + ":"
+				+ dt.getSeconds());
+		builder.appendHtmlConstant("</h1>");
 
-    @Inject
-    @SuppressWarnings("deprecation")
-    public TimeViewImpl()
-    {
-        panel = binder.createAndBindUi(this);
+		html.setHTML(builder.toSafeHtml());
+	}
 
-        Date dt = new Date();
+	@Override
+	public Widget asWidget() {
+		return panel;
+	}
 
-        SafeHtmlBuilder builder = new SafeHtmlBuilder();
-        builder.appendHtmlConstant("<h1>");
-        builder.appendEscaped(dt.getHours() + ":" + dt.getMinutes() + ":"
-                + dt.getSeconds());
-        builder.appendHtmlConstant("</h1>");
+	@UiHandler("link")
+	protected void onClick(ClickEvent event) {
+		timePresenter.goToDate();
+	}
 
-        html.setHTML(builder.toSafeHtml());
-    }
-
-
-    @Override
-    public Widget asWidget()
-    {
-        return panel;
-    }
-
-
-    @UiHandler("link")
-    protected void onClick(@SuppressWarnings("unused") ClickEvent event)
-    {
-        timePresenter.goToDate();
-    }
-
-
-    @Override
-    public void setPresenter(TimePresenter timePresenter)
-    {
-        this.timePresenter = timePresenter;
-
-    }
-
+	@Override
+	public void setPresenter(TimePresenter timePresenter) {
+		this.timePresenter = timePresenter;
+	}
 }

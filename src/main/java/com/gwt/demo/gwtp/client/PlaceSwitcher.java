@@ -26,7 +26,7 @@ public class PlaceSwitcher {
 	public void swapFromCurrentRequest() {
 		PlaceRequest request = placeManager.getCurrentPlaceRequest();
 		String to = request.getParameter("and", "");
-		if (to.length() > 0) {
+		if (!to.isEmpty()) {
 			swap(to, NameTokens.swapDelay);
 		} else {
 			stopDelayedSwap();
@@ -72,7 +72,7 @@ public class PlaceSwitcher {
 	}
 
 	public void goTo(final String nameToken, final String swapTo) {
-		if (nameToken.length() > 0 && swapTo.length() > 0) {
+		if (!nameToken.isEmpty() && !swapTo.isEmpty()) {
 			stopDelayedSwap();
 			PlaceRequest request = new PlaceRequest(nameToken);
 			request = request.with("and", swapTo);
