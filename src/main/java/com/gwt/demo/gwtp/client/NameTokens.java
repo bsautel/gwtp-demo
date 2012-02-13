@@ -14,4 +14,5 @@ public class NameTokens {
 	}
 
 	public static final int swapDelay = 2000;
+	public static final String BROWSER = "browser";
 }
