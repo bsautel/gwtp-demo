@@ -1,20 +1,25 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
 	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 	<ui:style>
+		.body {
+			background-color: #fff;
+		}
+		
 		.header {
 			
 		}
 		
 		.content {
 			margin-top: 40px;
-			color: #694B05;
+			color: #000;
+			font-family: 'Ruda', sans-serif;
 		}
 		
 		.footer {
 			
 		}
 	</ui:style>
-	<g:HTMLPanel>
+	<g:HTMLPanel styleName="{style.body}">
 		<g:SimplePanel ui:field="headerPanel" styleName="{style.header}" />
 		<g:SimplePanel ui:field="mainPanel" styleName="{style.content}" />
 		<g:SimplePanel ui:field="footerPanel" styleName="{style.footer}" />

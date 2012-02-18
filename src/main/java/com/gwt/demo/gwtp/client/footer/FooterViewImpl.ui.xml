@@ -3,8 +3,8 @@
 	<ui:style>
 		.madeWithGwt {
 			position: absolute;
-			bottom: 30px;
-			right: 20px;
+			bottom: 20px;
+			right: 10px;
 			-moz-transform: rotate(-10deg);
 			-webkit-transform: rotate(-10deg);
 			-o-transform: rotate(-10deg);
@@ -13,11 +13,10 @@
 		
 		.madeWithGwt h4 {
 			display: inline;
-			color: #ffffff;
-			font-size: 30px;
+			font-size: 20px;
 			font-family: 'Kaushan Script', cursive;
-			text-shadow: -5px 0 #aac495, 0 5px #aac495, 5px 0 #aac495, 0 -5px
-				#aac495;
+			text-shadow: -1px 0 #aaa, 0 1px #aaa, 1px 0 #aaa, 0 -1px
+				#aaa;
 		}
 		
 		.madeWithGwt h4,.madeWithGwt img {
@@ -26,7 +25,7 @@
 		
 		.madeWithGwt img {
 			margin-left: 10px;
-			width: 64px;
+			width: 40px;
 		}
 		
 		.gwtLogo {

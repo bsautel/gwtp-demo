@@ -4,7 +4,6 @@
 		.aboutPage {
 			width: 800px;
 			margin: auto;
-			font-family: 'Ruda', sans-serif;
 		}
 		
 		.aboutTitle {
