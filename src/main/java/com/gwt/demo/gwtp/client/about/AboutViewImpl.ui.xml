@@ -1,0 +1,44 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+	<ui:style>
+		.aboutPage {
+			width: 800px;
+			margin: auto;
+			font-family: 'Ruda', sans-serif;
+		}
+		
+		.aboutTitle {
+			text-align: center;
+		}
+		
+		.technologies {
+			
+		}
+		
+		.technology {
+			margin: 20px 0;
+		}
+		
+		.technology a {
+			text-decoration: none;
+			font-weight: bold;
+			color: #A77708;
+		}
+	</ui:style>
+	<g:HTMLPanel styleName="{style.aboutPage}">
+		<h1 class="{style.aboutTitle}">About this demo</h1>
+		<p>This demo has been done using the following technologies:</p>
+		<ul class="{style.technologies}">
+			<li class="{style.technology}">
+				<a href="http://code.google.com/webtoolkit/">GWT</a>
+				(Google Web Toolkit, a power full web
+				application platform)
+			</li>
+			<li class="{style.technology}">
+				<a href="http://code.google.com/p/gwt-platform/">GWTP</a>
+				(GWT Platform, a MVP framework for GWT)
+			</li>
+			<li class="{style.technology}">HTML 5 &amp; CSS 3</li>
+		</ul>
+	</g:HTMLPanel>
+</ui:UiBinder>

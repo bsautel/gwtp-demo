@@ -5,6 +5,7 @@ import com.google.gwt.inject.client.AsyncProvider;
 import com.google.gwt.inject.client.GinModules;
 import com.google.gwt.inject.client.Ginjector;
 import com.google.inject.Provider;
+import com.gwt.demo.gwtp.client.about.AboutPresenter;
 import com.gwt.demo.gwtp.client.app.AppPresenter;
 import com.gwt.demo.gwtp.client.browser.BrowserPresenter;
 import com.gwt.demo.gwtp.client.date.DatePresenter;
@@ -22,6 +23,8 @@ public interface ModuleGinjector extends Ginjector {
 	Provider<DatePresenter> getDatePresenter();
 
 	Provider<BrowserPresenter> getBrowserPresenter();
+
+	Provider<AboutPresenter> getAboutPresenter();
 
 	Provider<AppPresenter> getAppPresenter();
 }

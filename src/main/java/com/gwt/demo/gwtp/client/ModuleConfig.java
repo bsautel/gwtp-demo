@@ -1,5 +1,9 @@
 package com.gwt.demo.gwtp.client;
 
+import com.gwt.demo.gwtp.client.about.AboutPresenter;
+import com.gwt.demo.gwtp.client.about.AboutPresenter.AboutProxy;
+import com.gwt.demo.gwtp.client.about.AboutView;
+import com.gwt.demo.gwtp.client.about.AboutViewImpl;
 import com.gwt.demo.gwtp.client.app.AppPresenter;
 import com.gwt.demo.gwtp.client.app.AppPresenter.AppProxy;
 import com.gwt.demo.gwtp.client.app.AppView;
@@ -37,6 +41,8 @@ public class ModuleConfig extends AbstractPresenterModule {
 				TimeProxy.class);
 		bindPresenter(DatePresenter.class, DateView.class, DateViewImpl.class,
 				DateProxy.class);
+		bindPresenter(AboutPresenter.class, AboutView.class,
+				AboutViewImpl.class, AboutProxy.class);
 
 		bindPresenter(BrowserPresenter.class, BrowserView.class,
 				BrowserViewImpl.class, BrowserProxy.class);
