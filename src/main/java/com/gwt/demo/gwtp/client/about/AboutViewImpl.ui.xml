@@ -29,16 +29,16 @@
 		<h1 class="{style.aboutTitle}">About this demo</h1>
 		<p>This demo has been done using the following technologies:</p>
 		<ul class="{style.technologies}">
+			<li class="{style.technology}">HTML 5 &amp; CSS 3</li>
 			<li class="{style.technology}">
 				<a href="http://code.google.com/webtoolkit/">GWT</a>
-				(Google Web Toolkit, a power full web
+				(Google Web Toolkit, a powerful web
 				application platform)
 			</li>
 			<li class="{style.technology}">
 				<a href="http://code.google.com/p/gwt-platform/">GWTP</a>
 				(GWT Platform, a MVP framework for GWT)
 			</li>
-			<li class="{style.technology}">HTML 5 &amp; CSS 3</li>
 		</ul>
 	</g:HTMLPanel>
 </ui:UiBinder>
