@@ -15,8 +15,7 @@
 			display: inline;
 			font-size: 20px;
 			font-family: 'Kaushan Script', cursive;
-			text-shadow: -1px 0 #aaa, 0 1px #aaa, 1px 0 #aaa, 0 -1px
-				#aaa;
+			text-shadow: -1px 0 #aaa, 0 1px #aaa, 1px 0 #aaa, 0 -1px #aaa;
 		}
 		
 		.madeWithGwt h4,.madeWithGwt img {
@@ -32,11 +31,12 @@
 			
 		}
 	</ui:style>
+	<ui:image field="gwtLogo" src="gwt-logo.png"></ui:image>
 	<g:HTMLPanel>
 		<div class="{style.madeWithGwt}">
 			<h4>Made with GWT</h4>
-			<img src="http://upload.wikimedia.org/wikipedia/en/f/f6/Gwt-logo.png"
-				alt="GWT Logo" class="{style.gwtLogo}" />
+			<g:Image resource="{gwtLogo}" styleName="{style.gwtLogo}"
+				altText="GWT Logo" />
 		</div>
 	</g:HTMLPanel>
 </ui:UiBinder>
