@@ -1,7 +1,11 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
 	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 	<ui:style>
-		.headerPanel {
+		.header {
+			font-family: 'Exo', sans-serif;
+		}
+		
+		.titlePanel {
 			background-color: #fff6de;
 			border: 3px solid #e8a400;
 			-webkit-border-radius: 15px;
@@ -11,15 +15,36 @@
 			width: 600px;
 		}
 		
-		.headerPanel h1 {
+		.titlePanel h1 {
 			color: #e8a400;
-			font-family: 'Exo', sans-serif;
 			text-align: center;
 		}
+		
+		.menu {
+			margin-top: 10px;
+			text-align: center;
+			color: #2636D7;
+		}
+		
+		.menuLink {
+			font-weight: bold;
+			text-decoration: none;
+			color: #2636D7;
+			font-size: 20px;
+		}
+		
+		.menuSeparator {
+			margin: 0 10px;
+		}
 	</ui:style>
-	<g:HTMLPanel>
-		<div class="{style.headerPanel}">
+	<g:HTMLPanel styleName="{style.header}">
+		<div class="{style.titlePanel}">
 			<h1>Welcome on GWTP demo page!</h1>
+		</div>
+		<div class="{style.menu}">
+			<a href="#about" class="{style.menuLink}">About</a>
+			<span class="{style.menuSeparator}">•</span>
+			<a href="#browser" class="{style.menuLink}">Browser</a>
 		</div>
 	</g:HTMLPanel>
 </ui:UiBinder>
