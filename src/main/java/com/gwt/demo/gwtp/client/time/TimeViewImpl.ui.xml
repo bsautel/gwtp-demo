@@ -1,9 +1,0 @@
-<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-
-	<g:FlowPanel>
-		<g:HTML ui:field="html"/>
-		<g:Anchor ui:field="link" text="Display the date"/>
-	</g:FlowPanel>
-
-</ui:UiBinder>

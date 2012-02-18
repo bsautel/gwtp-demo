@@ -14,8 +14,7 @@ public class ModulePlaceManager extends PlaceManagerImpl {
 
 	@Override
 	public void revealDefaultPlace() {
-		PlaceRequest request = new PlaceRequest(NameTokens.getDatePage());
-		request = request.with("and", NameTokens.getTimePage());
+		PlaceRequest request = new PlaceRequest(NameTokens.ABOUT);
 		revealPlace(request);
 	}
 }
