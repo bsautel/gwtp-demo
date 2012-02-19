@@ -13,6 +13,7 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 
 public class BrowserPresenter extends Presenter<BrowserView, BrowserProxy> {
+	private static final String HOME_URL = "http://fr.wikipedia.org";
 	private final AppPresenter appPresenter;
 
 	@ProxyStandard
@@ -25,16 +26,21 @@ public class BrowserPresenter extends Presenter<BrowserView, BrowserProxy> {
 			BrowserProxy proxy, AppPresenter appPresenter) {
 		super(eventBus, view, proxy);
 		this.appPresenter = appPresenter;
+		view.setPresenter(this);
 	}
 
 	@Override
 	public void prepareFromRequest(PlaceRequest request) {
 		super.prepareFromRequest(request);
-		getView().displayUrl("http://fr.wikipedia.org");
+		getView().displayUrl(HOME_URL);
 	}
 
 	@Override
 	protected void revealInParent() {
 		RevealContentEvent.fire(appPresenter, AppPresenter.MAIN_SLOT, this);
+	}
+
+	public void changeUrl(String url) {
+		getView().goToUrl(url);
 	}
 }
