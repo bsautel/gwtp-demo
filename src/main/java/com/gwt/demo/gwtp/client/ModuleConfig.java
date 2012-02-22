@@ -15,6 +15,10 @@ import com.gwt.demo.gwtp.client.browser.BrowserViewImpl;
 import com.gwt.demo.gwtp.client.footer.FooterPresenter;
 import com.gwt.demo.gwtp.client.footer.FooterView;
 import com.gwt.demo.gwtp.client.footer.FooterViewImpl;
+import com.gwt.demo.gwtp.client.hangman.HangmanPresenter;
+import com.gwt.demo.gwtp.client.hangman.HangmanPresenter.HangmanProxy;
+import com.gwt.demo.gwtp.client.hangman.HangmanView;
+import com.gwt.demo.gwtp.client.hangman.HangmanViewImpl;
 import com.gwt.demo.gwtp.client.header.HeaderPresenter;
 import com.gwt.demo.gwtp.client.header.HeaderView;
 import com.gwt.demo.gwtp.client.header.HeaderViewImpl;
@@ -34,6 +38,9 @@ public class ModuleConfig extends AbstractPresenterModule {
 
 		bindPresenter(BrowserPresenter.class, BrowserView.class,
 				BrowserViewImpl.class, BrowserProxy.class);
+
+		bindPresenter(HangmanPresenter.class, HangmanView.class,
+				HangmanViewImpl.class, HangmanProxy.class);
 
 		bindSingletonPresenterWidget(HeaderPresenter.class, HeaderView.class,
 				HeaderViewImpl.class);
