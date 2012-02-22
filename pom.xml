@@ -33,6 +33,15 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>gwt-maven-plugin</artifactId>
 				<version>${gwt.plugin.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<!-- <goal>resources</goal> -->
+							<goal>compile</goal>
+							<goal>test</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
 					<webappDirectory>war</webappDirectory>
 					<noServer>true</noServer>
@@ -40,16 +49,23 @@
 					<localWorkers>2</localWorkers>
 				</configuration>
 			</plugin>
-			<plugin>            
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>war</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
-					<webXml>war/WEB-INF/web.xml</webXml>        
+					<webXml>war/WEB-INF/web.xml</webXml>
+					<warSourceDirectory>war</warSourceDirectory>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 
 	<dependencies>
 		<dependency>
