@@ -44,7 +44,6 @@
 				</executions>
 				<configuration>
 					<webappDirectory>war</webappDirectory>
-					<noServer>true</noServer>
 					<testTimeOut>120</testTimeOut>
 					<localWorkers>2</localWorkers>
 				</configuration>
@@ -115,7 +114,6 @@
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<gwt.version>2.4.0</gwt.version>
-		<gwtVersion>${gwt.version}</gwtVersion>
 		<gwt.plugin.version>2.4.0</gwt.plugin.version>
 		<gwt.test.mode>htmlunit</gwt.test.mode>
 	</properties>
