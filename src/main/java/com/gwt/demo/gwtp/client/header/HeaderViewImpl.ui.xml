@@ -45,6 +45,8 @@
 			<a href="#about" class="{style.menuLink}">About</a>
 			<span class="{style.menuSeparator}">•</span>
 			<a href="#browser" class="{style.menuLink}">Browser</a>
+			<span class="{style.menuSeparator}">•</span>
+			<a href="#hangman" class="{style.menuLink}">Hangman</a>
 		</div>
 	</g:HTMLPanel>
 </ui:UiBinder>
