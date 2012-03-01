@@ -1,6 +1,7 @@
 package com.gwt.demo.gwtp.client.hangman;
 
 import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.user.client.Random;
 import com.google.inject.Inject;
 import com.gwt.demo.gwtp.client.NameTokens;
 import com.gwt.demo.gwtp.client.app.AppPresenter;
@@ -21,6 +22,8 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 
 public class HangmanPresenter extends Presenter<HangmanView, HangmanProxy> {
+	private static final String[] WORDS = { "INTERNET", "CARRIAGE", "COMPUTER",
+			"LANGUAGE", "KEYBORD", "BROWSER" };
 	private final AppPresenter appPresenter;
 	private HangmanGame game;
 
@@ -40,7 +43,18 @@ public class HangmanPresenter extends Presenter<HangmanView, HangmanProxy> {
 	@Override
 	public void prepareFromRequest(PlaceRequest request) {
 		super.prepareFromRequest(request);
-		game = new HangmanGame("ALONGWORD", 5);
+		play();
+	}
+
+	private void play() {
+		initGame();
+		getView().startGame();
+		game.startPlaying();
+	}
+
+	private void initGame() {
+		String randomWord = WORDS[Random.nextInt(WORDS.length)];
+		game = new HangmanGame(randomWord, 5);
 		game.addRequireCharacterHandler(new RequireCharacterHandler() {
 			@Override
 			public void onRequireCharacter(RequireCharacterEvent event) {
@@ -59,7 +73,6 @@ public class HangmanPresenter extends Presenter<HangmanView, HangmanProxy> {
 				displayHasLostMessage(event.getState());
 			}
 		});
-		game.startPlaying();
 	}
 
 	private void askCharacter(HangmanState state) {
@@ -81,5 +94,9 @@ public class HangmanPresenter extends Presenter<HangmanView, HangmanProxy> {
 
 	public void onCharacterRead(char character) {
 		game.setReadCharacter(Character.toUpperCase(character));
+	}
+
+	public void restart() {
+		play();
 	}
 }

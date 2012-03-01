@@ -5,11 +5,13 @@
 	</ui:style>
 	<g:FocusPanel ui:field="panel">
 		<g:HTMLPanel>
+			<g:Label ui:field="typeACharacterLabel" />
 			<g:Label ui:field="currentWordLabel" />
 			<g:Label ui:field="remainingTriesLabel" />
 			<g:Label ui:field="winLabel" visible="false">Congratulations, you
 				won!</g:Label>
 			<g:Label ui:field="looseLabel" visible="false">Sorry, you lost!</g:Label>
+			<g:Button ui:field="restartButton">Restart Game</g:Button>
 		</g:HTMLPanel>
 	</g:FocusPanel>
 </ui:UiBinder>

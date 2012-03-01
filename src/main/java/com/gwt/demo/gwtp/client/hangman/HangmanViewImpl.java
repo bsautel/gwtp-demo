@@ -1,10 +1,12 @@
 package com.gwt.demo.gwtp.client.hangman;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.KeyPressEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
+import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
@@ -20,7 +22,9 @@ public class HangmanViewImpl extends ViewImpl implements HangmanView {
 	protected FocusPanel panel;
 	@UiField
 	protected Label currentWordLabel, remainingTriesLabel, winLabel,
-			looseLabel;
+			looseLabel, typeACharacterLabel;
+	@UiField
+	protected Button restartButton;
 	private boolean characterExpected = false;
 	private HangmanPresenter presenter;
 
@@ -34,12 +38,23 @@ public class HangmanViewImpl extends ViewImpl implements HangmanView {
 	}
 
 	@Override
+	public void startGame() {
+		characterExpected = false;
+		winLabel.setVisible(false);
+		looseLabel.setVisible(false);
+		remainingTriesLabel.setVisible(true);
+		currentWordLabel.setVisible(true);
+		typeACharacterLabel.setVisible(false);
+	}
+
+	@Override
 	public void askCharacter(HangmanState state) {
 		characterExpected = true;
 		currentWordLabel.setText(state.getCurrentWord());
 		remainingTriesLabel.setText(String.valueOf(state.getRemainingTries()));
 		winLabel.setVisible(false);
 		looseLabel.setVisible(false);
+		typeACharacterLabel.setVisible(true);
 	}
 
 	@Override
@@ -63,9 +78,15 @@ public class HangmanViewImpl extends ViewImpl implements HangmanView {
 			if ((character >= 'a' && character <= 'z')
 					|| (character >= 'A' && character <= 'Z')) {
 				characterExpected = false;
+				typeACharacterLabel.setVisible(false);
 				presenter.onCharacterRead(character);
 			}
 		}
+	}
+
+	@UiHandler("restartButton")
+	protected void onRestart(ClickEvent event) {
+		presenter.restart();
 	}
 
 	@Override
