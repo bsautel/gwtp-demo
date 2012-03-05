@@ -1,5 +1,6 @@
 package com.gwt.demo.gwtp.client.hangman;
 
+import com.google.gwt.canvas.client.Canvas;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.KeyPressEvent;
@@ -10,6 +11,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
+import com.gwt.demo.gwtp.client.hangman.drawer.HangmanDrawer;
 import com.gwt.demo.gwtp.client.hangman.game.HangmanState;
 import com.gwtplatform.mvp.client.ViewImpl;
 
@@ -25,11 +27,18 @@ public class HangmanViewImpl extends ViewImpl implements HangmanView {
 			looseLabel, typeACharacterLabel;
 	@UiField
 	protected Button restartButton;
+	@UiField(provided = true)
+	protected Canvas hangmanCanvas;
 	private boolean characterExpected = false;
 	private HangmanPresenter presenter;
+	private HangmanDrawer drawer;
 
 	public HangmanViewImpl() {
+		if (Canvas.isSupported()) {
+			hangmanCanvas = Canvas.createIfSupported();
+		}
 		BINDER.createAndBindUi(this);
+		drawer = new HangmanDrawer();
 	}
 
 	@Override
@@ -55,6 +64,7 @@ public class HangmanViewImpl extends ViewImpl implements HangmanView {
 		winLabel.setVisible(false);
 		looseLabel.setVisible(false);
 		typeACharacterLabel.setVisible(true);
+		drawer.draw(hangmanCanvas, state.getRemainingTries());
 	}
 
 	@Override
