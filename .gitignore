@@ -7,3 +7,4 @@ gwt-unitCache
 war/datetime
 war/gwtpdemo
 war/WEB-INF/deploy
+war/WEB-INF/lib/
