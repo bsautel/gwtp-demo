@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.google.gwt.canvas.client.Canvas;
 import com.google.gwt.canvas.dom.client.CssColor;
+import com.gwt.demo.gwtp.client.hangman.HangmanPresenter;
 
 public class HangmanDrawer {
 	private List<HangmanPartDrawer> drawers;
@@ -22,9 +23,17 @@ public class HangmanDrawer {
 	}
 
 	public void draw(Canvas canvas, int remainingTries) {
+		canvas.getContext2d().clearRect(0.0d, 0.0d,
+				canvas.getCoordinateSpaceWidth(),
+				canvas.getCoordinateSpaceHeight());
 		canvas.getContext2d().setFillStyle(CssColor.make("black"));
+		int i = HangmanPresenter.TOTAL_TRIES - remainingTries;
 		for (HangmanPartDrawer drawer : drawers) {
 			drawer.draw(canvas);
+			if (i == 0) {
+				break;
+			}
+			i--;
 		}
 	}
 }

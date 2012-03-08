@@ -54,6 +54,7 @@ public class HangmanViewImpl extends ViewImpl implements HangmanView {
 		remainingTriesLabel.setVisible(true);
 		currentWordLabel.setVisible(true);
 		typeACharacterLabel.setVisible(false);
+		drawer.draw(hangmanCanvas, HangmanPresenter.TOTAL_TRIES);
 	}
 
 	@Override
@@ -79,6 +80,7 @@ public class HangmanViewImpl extends ViewImpl implements HangmanView {
 		currentWordLabel.setText(state.getWordToFind());
 		remainingTriesLabel.setVisible(false);
 		looseLabel.setVisible(true);
+		drawer.draw(hangmanCanvas, 0);
 	}
 
 	@UiHandler("panel")

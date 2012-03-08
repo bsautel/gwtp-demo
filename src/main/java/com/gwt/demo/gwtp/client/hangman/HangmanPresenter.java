@@ -22,6 +22,7 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 
 public class HangmanPresenter extends Presenter<HangmanView, HangmanProxy> {
+	public static final int TOTAL_TRIES = 7;
 	private static final String[] WORDS = { "INTERNET", "CARRIAGE", "COMPUTER",
 			"LANGUAGE", "KEYBORD", "BROWSER" };
 	private final AppPresenter appPresenter;
@@ -54,7 +55,7 @@ public class HangmanPresenter extends Presenter<HangmanView, HangmanProxy> {
 
 	private void initGame() {
 		String randomWord = WORDS[Random.nextInt(WORDS.length)];
-		game = new HangmanGame(randomWord, 5);
+		game = new HangmanGame(randomWord, TOTAL_TRIES);
 		game.addRequireCharacterHandler(new RequireCharacterHandler() {
 			@Override
 			public void onRequireCharacter(RequireCharacterEvent event) {
