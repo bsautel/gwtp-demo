@@ -100,4 +100,10 @@ public class HangmanPresenter extends Presenter<HangmanView, HangmanProxy> {
 	public void restart() {
 		play();
 	}
+
+	@Override
+	protected void onHide() {
+		super.onHide();
+		getView().stopWaitingForCharacter();
+	}
 }

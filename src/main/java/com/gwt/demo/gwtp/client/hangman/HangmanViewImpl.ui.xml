@@ -3,19 +3,17 @@
 	<ui:style>
 		
 	</ui:style>
-	<g:FocusPanel ui:field="panel">
-		<g:HTMLPanel>
-			<g:Label ui:field="typeACharacterLabel" />
-			<g:Label ui:field="currentWordLabel" />
-			<g:Label ui:field="remainingTriesLabel" />
-			<g:Label ui:field="winLabel" visible="false">Congratulations, you
-				won!</g:Label>
-			<canvas:Canvas ui:field="hangmanCanvas" width="200px"
-				height="200px" />
-			<g:Label ui:field="looseLabel" visible="false">Sorry, you lost!</g:Label>
-			<g:SimplePanel>
-				<g:Button ui:field="restartButton">Restart Game</g:Button>
-			</g:SimplePanel>
-		</g:HTMLPanel>
-	</g:FocusPanel>
+	<g:HTMLPanel>
+		<g:Label ui:field="typeACharacterLabel" />
+		<g:Label ui:field="currentWordLabel" />
+		<g:Label ui:field="remainingTriesLabel" />
+		<g:Label ui:field="winLabel" visible="false">Congratulations, you
+			won!</g:Label>
+		<canvas:Canvas ui:field="hangmanCanvas" width="200px"
+			height="200px" />
+		<g:Label ui:field="looseLabel" visible="false">Sorry, you lost!</g:Label>
+		<g:SimplePanel>
+			<g:Button ui:field="restartButton">Restart Game</g:Button>
+		</g:SimplePanel>
+	</g:HTMLPanel>
 </ui:UiBinder>

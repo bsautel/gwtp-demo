@@ -8,6 +8,8 @@ public interface HangmanView extends View {
 
 	void askCharacter(HangmanState state);
 
+	void stopWaitingForCharacter();
+
 	void setPresenter(HangmanPresenter presenter);
 
 	void displayHasWonMessage(HangmanState state);
