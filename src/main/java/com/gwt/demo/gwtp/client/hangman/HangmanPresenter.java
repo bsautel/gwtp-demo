@@ -24,7 +24,7 @@ import com.gwtplatform.mvp.client.proxy.RevealContentEvent;
 public class HangmanPresenter extends Presenter<HangmanView, HangmanProxy> {
 	public static final int TOTAL_TRIES = 7;
 	private static final String[] WORDS = { "INTERNET", "CARRIAGE", "COMPUTER",
-			"LANGUAGE", "KEYBORD", "BROWSER" };
+			"LANGUAGE", "KEYBOARD", "BROWSER" };
 	private final AppPresenter appPresenter;
 	private HangmanGame game;
 

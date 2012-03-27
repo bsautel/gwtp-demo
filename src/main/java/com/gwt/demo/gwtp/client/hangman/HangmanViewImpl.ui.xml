@@ -1,18 +1,32 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
 	xmlns:g='urn:import:com.google.gwt.user.client.ui' xmlns:canvas='urn:import:com.google.gwt.canvas.client'>
 	<ui:style>
+		.hangmanPanel {
+			margin: 10px auto;
+			width: 600px;
+		}
 		
+		.canvas {
+			float: right;
+			width: 200px;
+			height: 200px;
+		}
+		
+		.restartGameButtonContainer {
+			margin-top: 50px;
+			clear: both;
+			text-align: center;
+		}
 	</ui:style>
-	<g:HTMLPanel>
+	<g:HTMLPanel styleName="{style.hangmanPanel}">
+		<canvas:Canvas ui:field="hangmanCanvas" styleName="{style.canvas}" />
 		<g:Label ui:field="typeACharacterLabel" />
 		<g:Label ui:field="currentWordLabel" />
 		<g:Label ui:field="remainingTriesLabel" />
 		<g:Label ui:field="winLabel" visible="false">Congratulations, you
 			won!</g:Label>
-		<canvas:Canvas ui:field="hangmanCanvas" width="200px"
-			height="200px" />
 		<g:Label ui:field="looseLabel" visible="false">Sorry, you lost!</g:Label>
-		<g:SimplePanel>
+		<g:SimplePanel styleName="{style.restartGameButtonContainer}">
 			<g:Button ui:field="restartButton">Restart Game</g:Button>
 		</g:SimplePanel>
 	</g:HTMLPanel>
